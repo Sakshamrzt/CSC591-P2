@@ -64,7 +64,7 @@ for q in quantizer_list:
         optimizer = optim.Adam(model.parameters(), lr=1e-3)
         # criterion = F.nll_loss
 
-        epochs=1
+        epochs=10
         # pre-train and evaluate the model on MNIST dataset
         for epoch in range(epochs):
             trainer(model, epoch, optimizer)
