@@ -86,10 +86,10 @@ for q in quantizer_list:
         # finetuning the model by using QAT
         quantizer=None
         if idx>1:
-            quantizer = q(model, config_list[idx], optimizer)
+            quantizer = q(model, config_list[i], optimizer)
         else:
             dummy_input = torch.rand(32, 1, 28, 28).to(device)
-            quantizer=q(model, config_list[idx], optimizer,dummy_input)
+            quantizer=q(model, config_list[i], optimizer,dummy_input)
 
         quantizer.compress()
 
